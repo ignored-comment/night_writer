@@ -14,4 +14,18 @@ module Messageable
     puts "Happy Braille-ing!"
   end
 
+  def confirmation_message(read_file, output_file)
+    puts "You've requested to read '#{read_file}'"
+    puts "and output the translated file to '#{output_file}'"
+    puts "Is that correct? Type 'y' for yes, 'n' for no. No quotes."
+  end
+
+  def start_over_message
+    puts "Sorry Capt'n! You either confirmed 'no' or you wrote something"
+    puts "other than 'y' or 'n'. Try again!"
+  end
+
+  def task_completed_message(output_file, character_length)
+    puts "Created '#{output_file}' containing #{character_length} characters."
+  end
 end

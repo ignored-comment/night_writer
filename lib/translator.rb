@@ -1,3 +1,5 @@
+require './lib/letters_library'
+
 class Translator
 
   attr_reader :library,

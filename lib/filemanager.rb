@@ -1,3 +1,5 @@
+require  './lib/translator'
+
 class FileManager
 
   attr_reader :translator,
