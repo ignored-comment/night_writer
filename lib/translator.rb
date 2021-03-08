@@ -39,11 +39,11 @@ class Translator
     line_2 = line_two
     line_3 = line_three
     until line_1.length == 0
-      @translated_data << line_1.slice!(0..79)
+      @translated_data << line_1.slice!(0..39)
       @translated_data << "\n"
-      @translated_data << line_2.slice!(0..79)
+      @translated_data << line_2.slice!(0..39)
       @translated_data << "\n"
-      @translated_data << line_3.slice!(0..79)
+      @translated_data << line_3.slice!(0..39)
       @translated_data << "\n"
     end
     @translated_data.join

@@ -13,7 +13,7 @@ class FileManager
   end
 
   def write(file)
-    new_file = File.new(file)
+    new_file = File.new(file, "w")
     new_file.puts(@translator.limit_to_80_characters)
     new_file.close
   end

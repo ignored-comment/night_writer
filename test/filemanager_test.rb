@@ -18,7 +18,7 @@ class FileManagerTest < Minitest::Test
   def test_it_can_read_a_file
     filemanager = FileManager.new
     filemanager.read("message_dummy.txt").chomp
-    expected = "hi this is a test\n"
+    expected = "hi this is a test"
     assert_equal expected, filemanager.read_file
   end
 
@@ -26,6 +26,6 @@ class FileManagerTest < Minitest::Test
     filemanager = FileManager.new
     filemanager.read("message.txt").chomp
     filemanager.write("newtxt.txt")
-    assert_instance_of File, "newtxt.txt"
+    assert_instance_of String, File.read("newtxt.txt")
   end
 end
