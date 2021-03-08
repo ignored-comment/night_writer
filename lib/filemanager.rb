@@ -9,7 +9,12 @@ class FileManager
   end
 
   def read(file)
-    @read_file = File.read(file)
+    @read_file = File.read(file).chomp
   end
 
+  def write(file)
+    new_file = File.new(file)
+    new_file.puts(@translator.limit_to_80_characters)
+    new_file.close
+  end
 end

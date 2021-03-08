@@ -19,11 +19,89 @@ class TranslatorTest < Minitest::Test
     assert_instance_of FileManager, translator.file_manager
   end
 
-  def test_it_can_translate_words
+  def test_it_can_translate_letters_from_line_one
+    manager = FileManager.new
+    translator = Translator.new(manager)
+    manager.read("message_dummy.txt")
+    expected = [
+    "0.",
+    ".0",
+    "..",
+    ".0",
+    "0.",
+    ".0",
+    ".0",
+    "..",
+    ".0",
+    ".0",
+    "..",
+    "0.",
+    "..",
+    ".0",
+    "0.",
+    ".0",
+    ".0"
+    ]
+    assert_equal expected, translator.line_one
+  end
+
+  def test_it_can_translate_letters_from_line_two
+    manager = FileManager.new
+    translator = Translator.new(manager)
+    manager.read("message_dummy.txt")
+    expected = [
+      "00",
+      "0.",
+      "..",
+      "00",
+      "00",
+      "0.",
+      "0.",
+      "..",
+      "0.",
+      "0.",
+      "..",
+      "..",
+      "..",
+      "00",
+      ".0",
+      "0.",
+      "00"
+    ]
+    assert_equal expected, translator.line_two
+  end
+
+  def test_it_can_translate_letters_from_line_three
+    manager = FileManager.new
+    translator = Translator.new(manager)
+    manager.read("message_dummy.txt")
+    expected = [
+      "..",
+      "..",
+      "..",
+      "0.",
+      "..",
+      "..",
+      "0.",
+      "..",
+      "..",
+      "0.",
+      "..",
+      "..",
+      "..",
+      "0.",
+      "..",
+      "0.",
+      "0."
+    ]
+    assert_equal expected, translator.line_three
+  end
+
+  def test_it_can_limit_characters_to_80_characters
     manager = FileManager.new
     translator = Translator.new(manager)
     manager.read("message.txt")
-    translator.translate_to_braille
-    assert_equal "lol", translator.translated_data
+    translator.limit_to_80_characters
+    assert_instance_of Array, translator.translated_data
   end
 end
