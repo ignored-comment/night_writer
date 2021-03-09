@@ -22,4 +22,10 @@ class FileManager
     new_file.puts(@translator.limit_to_80_characters)
     new_file.close
   end
+
+  def write_english(file)
+    new_file = File.new(file, "w")
+    new_file.puts(@reverse.translate)
+    new_file.close
+  end
 end

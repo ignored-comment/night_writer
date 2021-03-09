@@ -1,6 +1,6 @@
 module Messageable
 
-  def argv_message
+  def argv_help_message
     puts "This is the Night Writer Help Desk:"
     puts "Your first argument must be 'message.txt', no quotes."
     puts "Your second argument can be any file name you choose,"

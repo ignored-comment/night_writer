@@ -30,4 +30,12 @@ class FileManagerTest < Minitest::Test
     filemanager.write_braille("braille_txt_manager_test.txt")
     assert_instance_of String, File.read("braille_txt_manager_test.txt")
   end
+
+  def test_it_can_write_to_a_file_in_english
+    filemanager = FileManager.new
+    filemanager.read("dummy_braille.txt")
+    filemanager.write_english("message_dummy.txt")
+    expected = "hello"
+    assert_equal expected, File.read("message_dummy.txt")
+  end
 end
