@@ -2,6 +2,7 @@ require 'minitest/pride'
 require 'minitest/autorun'
 require './lib/letters_library'
 require './lib/translator'
+require './lib/reverse_translate'
 require './lib/filemanager'
 
 class TranslatorTest < Minitest::Test
