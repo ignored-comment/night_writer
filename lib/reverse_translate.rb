@@ -18,11 +18,12 @@ class ReverseTranslator
   end
 
   def format_to_individual_elements
-    line_1 = []
-    line_2 = []
-    line_3 = []
+    result = []
     split = @file_manager.read_file.downcase.split("\n")
-    require "pry"; binding.pry
+    until split[0].length == 0
+      result.push(split[0].slice!(0..1), split[1].slice!(0..1), split[2].slice!(0..1))
+    end
+    result
   end
 
   def format_to_hash_keys

@@ -64,12 +64,4 @@ class ReverseTranslatorTest < Minitest::Test
     expected = "hello"
     assert_equal expected, reverse.translate
   end
-
-  def test_it_can_translate_longer_letters
-    manager = FileManager.new
-    reverse = ReverseTranslator.new(manager)
-    manager.read("longer_dummy_braille.txt")
-    expected = "hello hello hello hello hello hello"
-    assert_equal expected, reverse.translate
-  end
 end

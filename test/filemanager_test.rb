@@ -19,8 +19,8 @@ class FileManagerTest < Minitest::Test
 
   def test_it_can_read_a_file
     filemanager = FileManager.new
-    filemanager.read("message.txt")
-    expected = "hi this is a test to see if my characters will wrap around at a limit of eighty characters"
+    filemanager.read("message_dummy.txt")
+    expected = "hello"
     assert_equal expected, filemanager.read_file
   end
 
@@ -36,6 +36,6 @@ class FileManagerTest < Minitest::Test
     filemanager.read("dummy_braille.txt")
     filemanager.write_english("message_dummy.txt")
     expected = "hello"
-    assert_equal expected, File.read("message_dummy.txt")
+    assert_equal expected, File.read("message_dummy.txt").chomp
   end
 end
